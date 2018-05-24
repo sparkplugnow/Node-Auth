@@ -1,0 +1,31 @@
+<h1 class="page-header">Register</h1>
+{{#if errors}}
+ {{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+ {{/each}} 
+ {{/if}}
+<form method="post" action="/register">
+<div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+</div>
+<div class="form-group">
+    <label for="Username">Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">
+</div>
+<div class="form-group">
+    <label for="Email">Email</label>
+    <input type="text" class="form-control" placeholder="Email" name="email">
+</div>
+
+<div class="form-group">
+    <label for="Password">Password</label>
+    <input type="text" class="form-control" placeholder="Password"  name="password">
+</div>
+<div class="form-group">
+    <label for="Confirm password">Confirm password</label>
+    <input type="text" class="form-control" placeholder="Confirm password"  name="confirmPassword">
+</div>
+
+<button type="submit" class="btn btn-success">submit</button>
+</form>

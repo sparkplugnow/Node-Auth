@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node Auth</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    {{#if user}}
+                    <li role="presentation">
+                        <a href="/">Dashboard</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="/logout">Logout</a>
+                    </li>
+
+                    {{else}}
+                    <li role="presentation">
+                        <a href="/register">Register</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="/login">Login</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+            <h3 class="text-muted" LoginApp></h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if success_msg}}
+                <div class="alert alert-danger">{{success_msg}}</div>{{/if}} {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>{{/if}} {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>{{/if}} {{{body}}}
+            </div>
+
+
+        </div>
+        <footer class="footer">
+            <p>&copy,genwagy LoginApp,Inc.</p>
+        </footer>
+    </div>
+    <!--/container-->
+</body>
+
+</html>
