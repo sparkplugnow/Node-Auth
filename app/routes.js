@@ -14,7 +14,11 @@ module.exports = function(app,passport){
     });
 
     //Process login form
-    // app.post('/login', function(req,res){});
+    app.post('/login', passport.authenticate('local-login',{
+        successRedirect: '/profile',
+        failureRedirect: '/login',
+        failureFlash: true
+    }));
 
     //Sign UP part
     app.get('/signup',function(req,res){
