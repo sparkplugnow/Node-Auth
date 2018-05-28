@@ -24,7 +24,11 @@ module.exports = function(app,passport){
     });
 
     //process the signup form
-    //app.post('/signup', function(req,res){});
+    app.post('/signup', passport.authenticate('local-signup',{
+        successRedirect: '/profile',
+        failureRedirect: '/signup',
+        failureFlash: true //allow flash messages
+    }));
 
 
     //Profile Section
@@ -45,7 +49,7 @@ module.exports = function(app,passport){
 function isLoggedIn(req,res,next){
     
     //if user is authenticated in the session, carry on
-    if(req.isAutheticated())
+    if(req.isAuthenticated())
         return next();
     res.redirect('/');
 };
